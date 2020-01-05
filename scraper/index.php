@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="scrapApp" ng-cloak>
+
+
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <mete http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Webscraper</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+    <script src="scrapapp.js"></script>
+
+</head>
+
+
+
+<body ng-controller="postController as formData" style="padding-top: 75px;">
+
+
+
+  <!-- Navigation -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="container">
+
+            <div class="col-lg-12 text-center dropshfont">
+
+                 <h3>Website Scraper</h3>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <div class="container-fluid">
+
+
+
+        <div class="row">
+
+            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
+
+
+
+                  <div class="form-group">
+
+                    <label for="url">URL to Scrape with or without Wilcard: </label> 
+
+                    <a href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="If you want to add a wildcard component to the URL replace it with ### (ie. http://abc.com/page/1.html should be http://abc.com/page/###.html"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+
+                    <input type="text" class="form-control" id="url" ng-model="url">
+
+                  </div>
+
+                 <div class="form-group">
+
+
+
+                 <div class="row">
+
+                    <div class="col-md-4">                        
+
+                        <label>Multiple Page? </label> <br>
+
+                        <input type="radio" name="multiple" id="multiple" ng-model="multiple" value="1"> Yes 
+
+                        <input type="radio" name="multiple" id="multiple" ng-model="multiple" value="0"> No 
+
+                    </div>
+
+                    <div class="col-md-4" ng-show="multiple == '1'">                        
+
+                        <label for="first">First Page</label>
+
+                        <input type="number" class="form-control" id="first" ng-model="first">
+
+                    </div>
+
+                    <div class="col-md-4" ng-show="multiple == '1'">
+
+                        <label for="last">Last Page</label>
+
+                        <input type="number" class="form-control" id="last" ng-model="last">
+
+                    </div>
+
+                </div>
+
+
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="path">XPath of Element to Scrape:</label>
+
+                    <a href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="The XPath of the element you would like to grab from the page. "><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+
+                    <input type="text" class="form-control" id="path" ng-model="path">
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label>Is Site CloudFlare Protected? </label>
+
+                    <label class="checkbox-inline">
+
+                    <input type="radio" name ="cf" id="cf" ng-model="cf" value="1"> Yes
+
+                    </label>
+
+                    <label class="checkbox-inline">
+
+                    <input type="radio" name="cf" id="cf" ng-model="cf" value="0"> No
+
+                    </label>
+
+                  </div>
+
+
+
+                  <button class="btn btn-default btn-primary" ng-click="grabData()">Submit</button>
+
+                  <button class="btn btn-default btn-warning" ng-show="loading">
+
+                  <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...
+
+                  </button>
+
+
+
+                            <table st-table="result" class="table table-striped" ng-show="resultset">
+
+                            <thead>
+
+                            <tr>
+
+                              <th>Content</th>
+
+                              <th>URL</th>
+
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                            <tr ng-repeat="item in resultset">
+
+                              <td>{{item.content}}</td>
+
+                              <td>{{item.url}}</td>
+
+                            </tr>
+
+                            </tbody>
+
+                          </table>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+    $(function () {
+
+      $('[data-toggle="popover"]').popover()
+
+    })
+
+    </script>
+
+</body>
+
+</html>

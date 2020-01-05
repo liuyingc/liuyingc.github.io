@@ -1,0 +1,144 @@
+
+a,.tp-caption a.btn:hover {
+	color: #212121;
+}
+.top-nav-collapse {
+	background: #212121;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+	color: #212121;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+    background-color: #212121;
+}
+
+.widget-avatar .avatar:hover {
+    border: 5px solid #212121;
+}
+
+.bg-skin {
+	background: #212121;
+}
+
+footer {
+    background-color: #212121;
+}
+
+.btn-skin {
+  color: #fff;
+  background-color: #212121;
+  border-color: #212121;
+}
+
+.yinyang {
+    width: 428px;
+    height: 428px;
+    background-color: transparent;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+@-webkit-keyframes spinnerRotate
+{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes spinnerRotate
+{
+    from{-moz-transform:rotate(0deg);}
+    to{-moz-transform:rotate(360deg);}
+}
+@-ms-keyframes spinnerRotate
+{
+    from{-ms-transform:rotate(0deg);}
+    to{-ms-transform:rotate(360deg);}
+}
+
+#logoyl {
+  background: url(../img/logo_lg.png) no-repeat center center;
+}
+
+#spin{
+    position:relative;
+    top:2%;
+    left:0%;
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinnerRotate;
+    -moz-animation-duration: 5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinnerRotate;
+    -ms-animation-duration: 5s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+
+.fade {
+   margin: auto;
+   border-style: solid;
+   border-width: 0px;
+   border-color: #000000;
+   opacity: .2;
+   transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+      opacity: 1;
+}
+
+.skillsicon {
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+}
+
+.projectsicon {
+    width: 250px;
+    height: 150px;
+    margin: 10px;
+}
+
+.dropshfont {
+  color: #FFF;
+  text-shadow: none;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  border-width: 0px;
+  border-color: #000;
+  border-style: none;
+  text-shadow: -1px 0 1px #000;
+}
+
+.contactbg {
+    background: url(../img/bg.jpg);
+    background-attachment: fixed !important;
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: cover;
+}
+
+.semitransparent {
+    opacity: 0.85;
+}
+
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+    max-width:1200px;
+  }
+}
